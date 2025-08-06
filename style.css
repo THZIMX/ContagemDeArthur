@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  height: 100vh;
+  background: linear-gradient(135deg, #1e1e2f, #2b2b4b);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+  text-align: center;
+  animation: fadeIn 2s ease;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  animation: float 3s ease-in-out infinite;
+}
+
+#countdown {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.time {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  min-width: 100px;
+  transition: transform 0.3s;
+}
+
+.time:hover {
+  transform: scale(1.05);
+}
+
+.time span {
+  font-size: 2.8rem;
+  font-weight: bold;
+  display: block;
+  color: #00ffdd;
+}
+
+.time small {
+  font-size: 1rem;
+  color: #ddd;
+}
+
+#message {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  color: #fffa65;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hidden {
+  display: none;
+}
+
+.cursor {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #fffa65;
+  animation: blink 1s infinite;
+  margin-left: 5px;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .time span {
+    font-size: 2rem;
+  }
+
+  #message {
+    font-size: 1rem;
+  }
+}
